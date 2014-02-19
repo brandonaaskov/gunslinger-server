@@ -10,6 +10,8 @@
   },
   "devDependencies": {
     "coffee-script": "~1.7.1",
-    "nodemon": "~1.0.15"
+    "nodemon": "~1.0.15",
+    "grunt-cli": "~0.1.13",
+    "grunt": "~0.4.2"
   }
 }
