@@ -11,7 +11,7 @@ app.use express.json()
 app.use express.urlencoded()
 app.use express.methodOverride()
 app.use app.router
-app.use express.static(path.join(__dirname, "../client"))
+app.use express.static(path.join(__dirname, "../gunslinger-client/"))
 
 # development only
 app.use express.errorHandler()  if "development" is app.get("env")
