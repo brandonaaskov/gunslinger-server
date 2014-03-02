@@ -17,3 +17,5 @@ app.use express.static(path.join(__dirname, "../gunslinger-client/"))
 app.use express.errorHandler()  if "development" is app.get("env")
 http.createServer(app).listen app.get("port"), ->
   console.log "Express server listening on port " + app.get("port")
+	
+cron = require('./scripts/cron/instagram-email')

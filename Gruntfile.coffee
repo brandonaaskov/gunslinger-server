@@ -14,14 +14,7 @@ module.exports = (grunt) ->
       scripts:
         files: ['scripts/**/*.coffee']
 
-    coffee:
-      tools:
-        expand: true
-        cwd: './'
-        src: ['**.coffee']
-        dest: ''
-        ext: '.js'
-
+		coffee:
       server:
         expand: true
         cwd: 'scripts'
