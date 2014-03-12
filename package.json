@@ -12,11 +12,14 @@
     "aws-sdk": "*",
     "request": "~2.34.0",
     "q": "~1.0.0",
-    "lodash": "~2.4.1",
+    "lodash": "^2.4.1",
     "firebase": "~1.0.5",
     "sendgrid": "~1.0.2"
   },
   "devDependencies": {
-    "grunt-contrib-coffee": "~0.10.1"
+    "grunt-contrib-coffee": "~0.10.1",
+    "gulp": "^3.5.5",
+    "gulp-coffee": "^1.4.1",
+    "gulp-nodemon": "^1.0.2"
   }
 }

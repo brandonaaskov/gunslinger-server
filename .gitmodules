@@ -1,0 +1,3 @@
+[submodule "static/videojs-comscore"]
+	path = static/videojs-comscore
+	url = https://github.com/brandonaaskov/videojs-comscore
