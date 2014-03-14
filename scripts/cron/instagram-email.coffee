@@ -55,5 +55,5 @@ task = (username) ->
 
 exports.startJob = ->
   job = new cronJob cronPattern, task
-  console.log 'email', email.test()
+#  console.log 'email', email.test()
   job.start()

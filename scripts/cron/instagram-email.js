@@ -91,7 +91,6 @@
   exports.startJob = function() {
     var job;
     job = new cronJob(cronPattern, task);
-    console.log('email', email.test());
     return job.start();
   };
 

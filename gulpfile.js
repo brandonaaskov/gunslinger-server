@@ -21,7 +21,7 @@ gulp.task('coffee', function () {
 
 // recompile coffeescript files on change
 gulp.task('watch', function () {
-  gulp.watch(paths.scripts, ['scripts']);
+  gulp.watch(paths.scripts, ['compile']);
 });
 
 //pushes up to heroku
@@ -45,7 +45,7 @@ gulp.task('nodemon', function () {
     ext: 'js coffee json'
   };
 
-  nodemon(options).on('change', ['scripts']);
+  nodemon(options).on('change', ['compile']);
 });
 
 // The default task (called when you run `gulp` from cli)
