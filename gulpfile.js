@@ -4,14 +4,19 @@ var _ = require('lodash'),
   nodemon = require('gulp-nodemon');
 
 var paths = {
-  scripts: ['app.coffee', 'scripts/**/*.coffee']
+  scripts: ['app.coffee', 'scripts/**/*.coffee'],
+  tests: ['tests/**/*.coffee']
 };
 
 //compiles coffee script files
-gulp.task('scripts', function () {
+gulp.task('coffee', function () {
   gulp.src(paths.scripts)
     .pipe(coffee())
     .pipe(gulp.dest('./scripts'));
+
+  gulp.src(paths.tests)
+    .pipe(coffee())
+    .pipe(gulp.dest('./tests'));
 });
 
 // recompile coffeescript files on change
@@ -44,6 +49,6 @@ gulp.task('nodemon', function () {
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['scripts', 'watch', 'nodemon']);
-gulp.task('compile', ['scripts']);
-gulp.task('develop', ['nodemon']);
+gulp.task('compile', ['coffee']);
+gulp.task('develop', ['compile', 'watch', 'nodemon']);
+gulp.task('default', ['develop']);
