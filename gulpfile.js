@@ -19,6 +19,19 @@ gulp.task('watch', function () {
   gulp.watch(paths.scripts, ['scripts']);
 });
 
+//pushes up to heroku
+gulp.task('deploy', function () {
+  var sys = require('sys');
+  var exec = require('child_process').exec;
+  function puts(stdout, stderr) {
+    if (stdout) sys.puts(stdout)
+    if (stderr) sys.puts(stderr)
+  }
+  exec("git push heroku master", function (stdout, stderr) {
+    puts(stdout, stderr);
+  });
+});
+
 gulp.task('nodemon', function () {
   var ignoredFiles = ['.git', 'node_modules', 'README.md'];
   var options = {
