@@ -1,7 +1,6 @@
 express = require("express")
 http = require("http")
 path = require("path")
-routes = require("routes/routes")
 app = express()
 
 # all environments
@@ -12,12 +11,9 @@ app.use express.json()
 app.use express.urlencoded()
 app.use express.methodOverride()
 app.use app.router
-app.use express.static(path.join(__dirname, "../gunslinger-client/"))
+app.use express.static(path.join(__dirname, "static/"))
 
 # development only
 app.use express.errorHandler()  if "development" is app.get("env")
 http.createServer(app).listen app.get("port"), ->
   console.log "Express server listening on port " + app.get("port")
-
-app.get '/api/v1/upload', routes.upload(req, res)
-cron = require('./scripts/cron/instagram-email')
